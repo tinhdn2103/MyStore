@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:background="@color/pink"
+        app:title="Chi tiết sản phẩm"
+        android:id="@+id/detail_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/detailImg"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/clothes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_toolbar" />
+
+
+    <androidx.cardview.widget.CardView
+        android:translationY="-50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/cart"
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailImg">
+
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/detailName"
+                    android:fontFamily="@font/aldrich"
+                    android:text="Áo thun"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/detailRate"
+                    android:fontFamily="@font/aldrich"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.0"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_toLeftOf="@+id/ratingBar"
+                    android:layout_marginTop="5dp"/>
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_marginTop="10dp"
+                    android:stepSize="0.1"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:layout_alignParentRight="true"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:fontFamily="@font/aldrich"
+                android:id="@+id/detailDesc"
+                android:layout_marginTop="10dp"
+                android:text="Sợi vải mềm mại, thoải mái và mát mẻ lại có độ bền tốt. Công nghệ in: In lụa cao cấp, bảo quản tốt khi giặt máy , không bong tróc phai màu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giá:"
+                android:textSize="25dp"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:fontFamily="@font/aldrich"/>
+            <TextView
+                android:id="@+id/detailPrice"
+                android:textSize="20dp"
+                android:text="100000đ"
+                android:layout_gravity="center"
+                android:fontFamily="@font/aldrich"
+                android:textColor="@color/pink"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+                <ImageView
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/minItem"
+                    android:src="@drawable/minus"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:fontFamily="@font/aldrich"
+                    android:id="@+id/quantity"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/addItem"
+                    android:src="@drawable/add"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/addToCart"
+        android:text="Thêm vào giỏ hàng"
+        android:textStyle="bold"
+        android:drawableLeft="@drawable/ic_baseline_add_shopping_cart_24"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintBottom_toTopOf="@+id/buyNow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cart"
+        app:layout_constraintWidth_percent="0.8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/buyNow"
+        android:text="Mua ngay"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:drawableLeft="@drawable/ic_baseline_shopping_cart_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

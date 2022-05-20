@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Store</string>
+    <string name="first_slide">Chọn sản phẩm của bạn</string>
+    <string name="second_slide">Giao hàng nhanh</string>
+    <string name="third_slide">Dịch vụ tốt</string>
+    <string name="description">My Store...</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

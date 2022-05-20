@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    android:elevation="5dp"
+    android:layout_margin="5dp">
+    <TableLayout
+        android:padding="5dp"
+        android:stretchColumns="*"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                android:fontFamily="@font/aldrich"
+                android:text="Sản phẩm:"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/cart_name_item"
+                android:fontFamily="@font/aldrich"
+                android:text="Sản phẩm"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:fontFamily="@font/aldrich"
+                android:text="Đơn giá:"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/cart_price_item"
+                android:fontFamily="@font/aldrich"
+                android:text="Đơn giá"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:fontFamily="@font/aldrich"
+                android:text="Số lượng:"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/cart_quantity_item"
+                android:fontFamily="@font/aldrich"
+                android:text="Số lượng"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:fontFamily="@font/aldrich"
+                android:text="Tổng"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/cart_total_price_item"
+                android:fontFamily="@font/aldrich"
+                android:text="Tổng"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+        </TableRow>
+    </TableLayout>
+
+</androidx.cardview.widget.CardView>

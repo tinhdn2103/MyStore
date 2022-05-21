@@ -46,14 +46,15 @@ public class SearchFragment extends Fragment {
             @Override
             public boolean onQueryTextChange(String s) {
                 ArrayList<Product> list = new ArrayList();
-                for(Product p: productList){
-                    if(p.getName().toLowerCase().contains(s.toLowerCase()))
-                        list.add(p);
+                if(!s.isEmpty()) {
+                    for (Product p : productList) {
+                        if (p.getName().toLowerCase().contains(s.toLowerCase()))
+                            list.add(p);
+                    }
+                    if(list.isEmpty())
+                        Toast.makeText(getContext(), "Không tìm thấy sản phẩm", Toast.LENGTH_SHORT).show();
                 }
-                if(list.isEmpty())
-                    Toast.makeText(getContext(), "Không tìm thấy sản phẩm", Toast.LENGTH_SHORT).show();
-                else
-                    adapter.setList(list);
+                adapter.setList(list);
                 return false;
             }
         });

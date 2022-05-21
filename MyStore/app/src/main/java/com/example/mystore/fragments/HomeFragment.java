@@ -44,6 +44,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class HomeFragment extends Fragment implements CategoryAdapter.CategoryItemLister {
@@ -172,6 +174,12 @@ public class HomeFragment extends Fragment implements CategoryAdapter.CategoryIt
 
         LinearLayoutManager manager1 = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
         newProductsList = productList;
+        Collections.sort(productList, new Comparator<Product>() {
+            @Override
+            public int compare(Product p1, Product p2) {
+                return p2.getDateCreated().compareTo(p1.getDateCreated());
+            }
+        });
         newProductsAdapter = new NewProductsAdapter(getContext(), newProductsList);
         newRecyclerView.setLayoutManager(manager1);
         newRecyclerView.setAdapter(newProductsAdapter);

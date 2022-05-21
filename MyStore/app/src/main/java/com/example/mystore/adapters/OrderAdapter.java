@@ -3,6 +3,7 @@ package com.example.mystore.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +51,9 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         holder.date.setText(date);
         holder.time.setText(time);
         holder.totalPrice.setText(String.valueOf(order.getTotalPrice()));
+        if (order.getStatus().equals("ordered"))
+            holder.status.setTextColor(Color.parseColor("#00FF00"));
+        else holder.status.setTextColor(Color.parseColor("#FF0000"));
         holder.status.setText(order.getStatus());
         Address address = order.getAddress();
         holder.address.setText(address.getName()+"\n"+address.getAddress()+"\n"+address.getPhone());

@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class RegistrationActivity extends AppCompatActivity {
     private Button btnSignUp;
     private TextView tSignIn;
-    private EditText eName, eEmail, ePassword;
+    private EditText eEmail, ePassword;
     private FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,6 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         btnSignUp = findViewById(R.id.btnSignUp);
         tSignIn = findViewById(R.id.tSignIn);
-        eName = findViewById(R.id.eName);
         eEmail = findViewById(R.id.eEmail);
         ePassword = findViewById(R.id.ePass);
         auth = FirebaseAuth.getInstance();
@@ -41,13 +40,8 @@ public class RegistrationActivity extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = eName.getText().toString();
                 String email = eEmail.getText().toString();
                 String password = ePassword.getText().toString();
-                if(name.equals("")){
-                    Toast.makeText(RegistrationActivity.this, "Nhập tên", Toast.LENGTH_SHORT).show();
-                    return;
-                }
                 if(email.equals("")){
                     Toast.makeText(RegistrationActivity.this, "Nhập email", Toast.LENGTH_SHORT).show();
                     return;

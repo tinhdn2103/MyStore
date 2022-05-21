@@ -1,7 +1,5 @@
 package com.example.mystore.fragments;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,10 +16,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mystore.R;
-import com.example.mystore.activities.CartActivity;
 import com.example.mystore.adapters.OrderAdapter;
 import com.example.mystore.models.Address;
-import com.example.mystore.models.CartProduct;
 import com.example.mystore.models.Category;
 import com.example.mystore.models.Order;
 import com.example.mystore.models.OrderDetail;
